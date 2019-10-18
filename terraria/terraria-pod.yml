@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: terraria-builder
+  namespace: terraria
+spec:
+  volumes:
+  - name: terraria-worlds
+    persistentVolumeClaim:
+        claimName: terraria-worlds-claim
+  containers:
+  - name: terraria-builder
+    image: ryshe/terraria
+    args: [ "-world", "/world/Builder.wld" ]
+    volumeMounts:
+    - name: terraria-worlds
+      mountPath: /world

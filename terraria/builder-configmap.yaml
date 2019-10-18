@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: builder-world
+  namespace: terraria
+data:
+  NAME: builder-world
+  WORLD: /world/Builder.wld

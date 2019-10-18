@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: setup
+  namespace: terraria
+spec:
+  volumes:
+  - name: terraria-worlds
+    persistentVolumeClaim:
+        claimName: terraria-worlds-claim
+  containers:
+  - name: terraria-builder
+    image: ubuntu
+    command: [ "sleep", "300" ]
+    volumeMounts:
+    - name: terraria-worlds
+      mountPath: /world

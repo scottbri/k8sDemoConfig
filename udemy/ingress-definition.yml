@@ -1,0 +1,10 @@
+---
+apiVersion: "extensions/v1beta1"
+kind: "Ingress"
+metadata:
+  name: "myapp-nginx"
+  namespace: "default"
+spec:
+  backend:
+    serviceName: "myapp-service"
+    servicePort: 80
